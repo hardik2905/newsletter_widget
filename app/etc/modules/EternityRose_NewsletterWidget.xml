@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+ * Mamis
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is available through the world-wide-web at this URL:
+ * http://www.mamis.com.au/licencing
+ *
+ * @category   Mamis
+ * @copyright  Copyright (c) by Mamis (http://www.mamis.com.au)
+ * @author     Matthew Muscat <matthew@mamis.com.au>
+ * @license    http://www.mamis.com.au/licencing
+-->
+<config>
+    <modules>
+        <EternityRose_NewsletterWidget>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+            	<Mage_Newsletter />
+            </depends>
+        </EternityRose_NewsletterWidget>
+    </modules>
+</config>

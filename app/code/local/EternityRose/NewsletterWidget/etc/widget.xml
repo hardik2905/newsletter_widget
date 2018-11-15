@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+ * Mamis
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is available through the world-wide-web at this URL:
+ * http://www.mamis.com.au/licencing
+ *
+ * @category   Mamis
+ * @copyright  Copyright (c) by Mamis (http://www.mamis.com.au)
+ * @author     Matthew Muscat <matthew@mamis.com.au>
+ * @license    http://www.mamis.com.au/licencing
+-->
+<widgets>
+    <newsletterwidget type="newsletterwidget/form">
+        <name>TER - Newsletter</name>
+        <description type="desc">Add TER newsletter</description>
+        <parameters>
+            <cta translate="label">
+                <visible>1</visible>
+                <value>Subscribe to our newsletters</value>
+                <label>Enter CTA to display</label>
+                <type>text</type>
+            </cta>
+            <source translate="label">
+                <visible>1</visible>
+                <label>Set segmentation source for Mailchimp</label>
+                <type>text</type>
+            </source>
+        </parameters>
+    </newsletterwidget>
+</widgets>

@@ -1,0 +1,23 @@
+<div class="newsletter_form">
+    <h3 class="title">
+        <?php echo $this->getCta() ?>
+    </h3>
+    <div class="container">
+        <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="widget-newsletter">
+            <div class="input-box">
+                <input type="text" name="name" class="required-entry" placeholder="name" />
+            </div>
+            <div class="input-box">
+                <input type="text" name="email" class="required-entry validate-email" placeholder="email" />
+            </div>
+            <input type="hidden" name="source" value="<?php echo $this->getSource() ?>" />
+            <button>Sign Up</button>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var newsletterSubscriberFormDetail = new VarienForm('widget-newsletter');
+    new Varien.searchForm('widget-newsletter', 'newsletter', '<?php echo $this->helper('newsletter')->__('Enter your email address') ?>');
+//]]>
+</script>

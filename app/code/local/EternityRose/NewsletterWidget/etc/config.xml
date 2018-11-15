@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+ * Mamis
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is available through the world-wide-web at this URL:
+ * http://www.mamis.com.au/licencing
+ *
+ * @category   Mamis
+ * @copyright  Copyright (c) by Mamis (http://www.mamis.com.au)
+ * @author     Matthew Muscat <matthew@mamis.com.au>
+ * @license    http://www.mamis.com.au/licencing
+-->
+<config>
+    <modules>
+        <EternityRose_NewsletterWidget>
+            <version>1.0.0</version>
+        </EternityRose_NewsletterWidget>
+    </modules>
+    <global>
+        <models>
+            <newsletterwidget>
+                <class>EternityRose_NewsletterWidget_Model</class>
+            </newsletterwidget>
+        </models>
+        <blocks>
+            <newsletterwidget>
+                <class>EternityRose_NewsletterWidget_Block</class>
+            </newsletterwidget>
+            <adminhtml>
+                <rewrite>
+                    <newsletter_subscriber_grid>EternityRose_NewsletterWidget_Adminhtml_Block_Newsletter_Subscriber_Grid</newsletter_subscriber_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <helpers>
+            <newsletterwidget>
+                <class>EternityRose_NewsletterWidget_Helper</class>
+            </newsletterwidget>
+        </helpers>
+        <events>
+            <newsletter_subscriber_save_before>
+                <observers>
+                    <newsletterSubscriberChange>
+                        <class>EternityRose_NewsletterWidget_Model_Observer</class>
+                        <method>newsletterSubscriberChange</method>
+                    </newsletterSubscriberChange>
+                </observers>
+            </newsletter_subscriber_save_before>
+            <mailchimp_merge_field_send_before>
+                <observers>
+                    <save_mailchimp_source_page>
+                        <class>EternityRose_NewsletterWidget_Model_Observer</class>
+                        <method>saveMailchimpSourcePage</method>
+                    </save_mailchimp_source_page>
+                </observers>
+            </mailchimp_merge_field_send_before>
+        </events>
+        <resources>
+            <newsletterwidget_setup>
+                <setup>
+                    <module>EternityRose_NewsletterWidget</module>
+                    <class>EternityRose_NewsletterWidget_Model_Resource_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </newsletterwidget_setup>
+            <newsletterwidget_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </newsletterwidget_write>
+            <newsletterwidget_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </newsletterwidget_read>
+        </resources>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <EternityRose_NewsletterWidget>
+                    <file>eternityrose_newsletterwidget.xml</file>
+                </EternityRose_NewsletterWidget>
+            </updates>
+        </layout>
+    </frontend>
+</config>
